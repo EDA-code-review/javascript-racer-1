@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-	
-	
 
 	var player1 = document.getElementById('p1_strip');
 	var player2 = document.getElementById('p2_strip');
@@ -16,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		var chooseAgain = prompt("you didn't choose yolur length between 10_30");
 	};
 
+	// some weird indentation happening here, makes it hard to read
+
 	for (var i = 1; i <= trackLength-1; i++) {			    
 		player1.insertCell(2);
 		player2.insertCell(2);
@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var updatePlayerPosition = function (player, position){
     	if(player === "p1_strip") {
+    		
+    		// what is 'c'? use descriptive variable names, even if they are long :)
 	    	var c = document.querySelector( ".active1");
 	    	if (c != null){
 	    		c.className = "";	    	    	
@@ -40,9 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	}	
 	
 
+	// this is hard to read - if you pull the parts out into well named functions, it will result in more readable, and more easily changable code.
+	// functions could be "inputHandler" and "checkWin"... 
 	document.addEventListener('keyup', function(keyPress){
 		if(keyPress.keyCode === 81){
 	    		
+	    	// needs correct indentation
 	    	if(movesP1< trackLength) {
 	    		updatePlayerPosition('p1_strip', movesP1);
 	    		movesP1++;
